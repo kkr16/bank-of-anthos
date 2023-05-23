@@ -14,7 +14,7 @@
 
 terraform {
   backend "gcs" {
-      bucket = "bank-of-anthos-tf-state"
+      bucket = "bank-of-anthos-sdlc_tfstate"
       prefix = "bank-of-anthos"
   }
   required_providers {
