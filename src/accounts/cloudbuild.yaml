@@ -27,9 +27,9 @@ steps:
       - "--module=$_SERVICE"
       - "--tag=$COMMIT_SHA"
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['image','ls']
-  - name: 'gcr.io/cloud-builders/docker'
     args: ['pull', '${_CONTAINER_REGISTRY}/${_SERVICE}:${COMMIT_SHA}']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['image','ls']
   - name: gcr.io/cloud-builders/gsutil
     id: upload-skaffold-cache
     args: ['cp', '/workspace/$_CACHE',  $_CACHE_URI]
