@@ -25,6 +25,7 @@ steps:
       - "--default-repo=$_CONTAINER_REGISTRY"
       - "--cache-file=/workspace/$_CACHE" # set _CACHE to anything other than "cache" e.g. "no-cache" to reset skaffold cache
       - "--module=$_SERVICE"
+      - "--tag=$COMMIT_SHA"
   - name: gcr.io/cloud-builders/gsutil
     id: upload-skaffold-cache
     args: ['cp', '/workspace/$_CACHE',  $_CACHE_URI]
@@ -56,6 +57,6 @@ steps:
       - "--gcs-source-staging-dir=$_SOURCE_STAGING_BUCKET/$SHORT_SHA"
       - "--skaffold-version=skaffold_preview"
 images:
-- '${_CONTAINER_REGISTRY}/${_SERVICE}'
+- '${_CONTAINER_REGISTRY}/${_SERVICE}:${COMMIT_SHA}'
 options:
   logging: CLOUD_LOGGING_ONLY
