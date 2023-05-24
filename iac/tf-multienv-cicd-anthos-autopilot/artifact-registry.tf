@@ -42,7 +42,13 @@ module "artifact-registry-repository-iam-bindings" {
       "serviceAccount:${google_service_account.cloud_deploy.email}"
     ],
     "roles/artifactregistry.writer" = [
-      "serviceAccount:${google_service_account.cloud_build_pr.email}"
+      "serviceAccount:${google_service_account.cloud_build_pr.email}",
+      "serviceAccount:ci-balancereader@bank-of-anthos-sdlc.iam.gserviceaccount.com",
+      "serviceAccount:ci-contacts@bank-of-anthos-sdlc.iam.gserviceaccount.com",
+      "serviceAccount:ci-frontend@bank-of-anthos-sdlc.iam.gserviceaccount.com",
+      "serviceAccount:ci-ledgerwriter@bank-of-anthos-sdlc.iam.gserviceaccount.com",
+      "serviceAccount:ci-transactionhistory@bank-of-anthos-sdlc.iam.gserviceaccount.com",
+      "serviceAccount:ci-userservice@bank-of-anthos-sdlc.iam.gserviceaccount.com",
     ]
 
   }

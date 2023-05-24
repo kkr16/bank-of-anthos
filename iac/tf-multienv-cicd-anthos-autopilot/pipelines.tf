@@ -81,6 +81,7 @@ resource "google_clouddeploy_target" "production" {
       "VERIFY"
     ]
   }
+  require_approval = true
 }
 
 
