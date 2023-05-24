@@ -26,6 +26,10 @@ steps:
       - "--cache-file=/workspace/$_CACHE" # set _CACHE to anything other than "cache" e.g. "no-cache" to reset skaffold cache
       - "--module=$_SERVICE"
       - "--tag=$COMMIT_SHA"
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['tag',
+      '${_CONTAINER_REGISTRY}/${_SERVICE}:${COMMIT_SHA}',
+      '${_CONTAINER_REGISTRY}/${_SERVICE}:${COMMIT_SHA}']
   - name: gcr.io/cloud-builders/gsutil
     id: upload-skaffold-cache
     args: ['cp', '/workspace/$_CACHE',  $_CACHE_URI]
