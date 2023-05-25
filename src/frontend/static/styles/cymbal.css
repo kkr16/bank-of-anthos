@@ -314,7 +314,7 @@ bottom: 10px;
 /* BUTTONS */
 .btn, .btn-primary, .card-button, .btn-block, form button  {
   align-items: center;
-  background: #008A20 !important;
+  background: #008A20 !important; /*green!*/
   color: white !important;
   border-radius: 50px;
   font-weight: 500 !important;
