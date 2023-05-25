@@ -43,7 +43,7 @@
   }
   .button-icon {
     font-size: 24px;
-    color: #00098a;
+    color: #008A20;
   }
   .money-icon {
     font-size: 24px;
@@ -314,7 +314,7 @@ bottom: 10px;
 /* BUTTONS */
 .btn, .btn-primary, .card-button, .btn-block, form button  {
   align-items: center;
-  background: #008A20 !important;
+  background: #8a0000 !important;
   color: white !important;
   border-radius: 50px;
   font-weight: 500 !important;
